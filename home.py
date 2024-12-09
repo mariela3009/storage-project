@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from reservacion import show_reservacion
 #Fatima Yupa 
 def show_home():
     global home
@@ -21,7 +21,7 @@ def show_home():
     lista_servicios = ["Esmaltado", "Semipermanente", "Gel", "Esculpidas"]
     pos = 0.3
     for servicio in lista_servicios:
-        label = tk.Button(menu_frame, text=servicio)
+        label = tk.Button(menu_frame, text=servicio, command=ingresar)
         label.place(rely=pos)
         pos += 0.08
 
@@ -29,3 +29,7 @@ def show_home():
     boton_reservas.pack(side=tk.BOTTOM)
 
     home.mainloop()
+
+def ingresar():
+    home.destroy()
+    show_reservacion()
