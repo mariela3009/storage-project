@@ -11,7 +11,7 @@ def login_user(email, password):
     result = cursor.fetchone()
     conn.close()
 
-    if True:
+    if result:
         login.destroy()
         show_home()
     else:
